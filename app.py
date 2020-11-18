@@ -43,4 +43,8 @@ while not queue:
                 schedule_refresh()
         
         except common.exceptions.NoSuchElementException:
+            try:
+                button = sel.find_element_by_xpath('//button[@class="error-modal-popup__cta js-global-error-message-cta"]').click()
+            except:
+                pass
             schedule_refresh()
